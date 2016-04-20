@@ -8,10 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using System.IO;
+
+
 namespace xitong_xiangwincc
 {
     public partial class Form1 : Form
     {
+        public void function()
+        {
+            treeView1.Nodes[0].Text = "1";
+        }
+
         public Form1()
         {
             InitializeComponent();
@@ -107,7 +115,8 @@ namespace xitong_xiangwincc
             
             
             //treeView1.SelectedNode.
-
+            button3.Visible = false;
+            button4.Visible = false;
             
         }
 
@@ -154,7 +163,7 @@ namespace xitong_xiangwincc
 
         private void 新建工程ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form2 f2 = new Form2();
+            Form2 f2 = new Form2(function);
             f2.Show();//这里应该得用子线程吧？
         }
 
@@ -175,6 +184,10 @@ namespace xitong_xiangwincc
                 //output("用户选择的文件名称为：" + Name);
             }
         }
+        private void 导入ToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            
+        }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -192,6 +205,8 @@ namespace xitong_xiangwincc
             textBox5.Text = "";
             comboBox1.Text = null;
             comboBox2.Text = null;
+            button3.Visible = false;
+            button4.Visible = false;
         }
 
         private void toolStripMenuItem2_Click(object sender, EventArgs e)
@@ -214,6 +229,230 @@ namespace xitong_xiangwincc
         private void button6_Click(object sender, EventArgs e)
         {
             dataGridView1.Rows.Clear();
+            button3.Visible = false;
+            button4.Visible = false;
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            button3.Visible = true;
+            button4.Visible = true;
+        }
+
+        
+
+        private void excel文件ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "_execl files (*.xls)|*.xls";
+            saveFileDialog.FilterIndex = 0;
+            saveFileDialog.RestoreDirectory = true;
+            saveFileDialog.CreatePrompt = true;
+            saveFileDialog.Title = "Export Excel File";
+            saveFileDialog.ShowDialog();
+            if (saveFileDialog.FileName == "")
+                return;
+            Stream myStream;
+            myStream = saveFileDialog.OpenFile();
+            StreamWriter sw = new StreamWriter(myStream, System.Text.Encoding.GetEncoding(-0));
+
+            string str = "";
+            try
+            {
+                for (int i = 0; i < dataGridView1.ColumnCount; i++)
+                {
+                    if (i > 0)
+                    {
+                        str += "\t";
+                    }
+                    str += dataGridView1.Columns[i].HeaderText;
+                }
+                sw.WriteLine(str);
+                for (int j = 0; j < dataGridView1.Rows.Count; j++)
+                {
+                    string tempStr = "";
+                    for (int k = 0; k < dataGridView1.Columns.Count; k++)
+                    {
+                        if (k > 0)
+                        {
+                            tempStr += "\t";
+                        }
+                        tempStr += dataGridView1.Rows[j].Cells[k].Value.ToString();
+                    }
+                    sw.WriteLine(tempStr);
+                }
+                sw.Close();
+                myStream.Close();
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                sw.Close();
+                myStream.Close();
+            }
+        }
+
+        private void 运行设置ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form3 f3 = new Form3();
+            f3.Show();
+
+        }
+
+        private void 删除ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //如果是第一级
+            //OpenFileDialog openFileDialog2 = new OpenFileDialog();
+            //打开……
+            
+            //同步到右侧
+            if(treeView1.SelectedNode.Level==0)
+            {
+                string nownode = "函数1";
+                tabPage1.Text = nownode + "配置";
+                treeView1.SelectedNode.Nodes.Add(nownode);
+                foreach(TreeNode td in treeView1.SelectedNode.Nodes)
+                {
+                    if (td.Text == nownode)
+                    {
+                        td.Nodes.Add("输入");
+                        td.Nodes.Add("输出");
+                    }
+                }
+                
+                //treeView1.SelectedNode.Nodes.Add("输入");
+                //treeView1.SelectedNode.Nodes.Add("输出");
+                //对每个函数建立一个新的Excel表的新sheet
+
+            }
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            //上调顺序按钮
+            if (dataGridView1.CurrentRow == null)
+            {
+                MessageBox.Show("请选中要调整的行");
+            }
+            else if (dataGridView1.CurrentRow.Index <= 0)
+            {
+                MessageBox.Show("该行已在顶端，不能上移");
+            }
+            else
+            {
+                int nowIndex = dataGridView1.CurrentRow.Index;
+                string[] rowData = new string[5];
+                for (int i = 0; i < 5; i++ )
+                {
+                    rowData[i] = dataGridView1.Rows[nowIndex].Cells[i+1].Value.ToString();
+                }
+                for (int i = 0; i < 5; i++)
+                {
+                    dataGridView1.Rows[nowIndex].Cells[i+1].Value = dataGridView1.Rows[nowIndex-1].Cells[i+1].Value;
+                }
+                for (int i = 0; i < 5; i++)
+                {
+                    dataGridView1.Rows[nowIndex-1].Cells[i+1].Value = rowData[i];
+                }
+                this.dataGridView1.CurrentCell = this.dataGridView1.Rows[nowIndex - 1].Cells[0];//设定当前行
+                
+                //以下是网上找的程序，但是本程序没有DataSource数据源所以不能这么直接用，借用思想
+                //_rowData = (this.dataGridView1.DataSource as DataTable).Rows[nowIndex].ItemArray;
+                //(this.dataGridView1.DataSource as DataTable).Rows[nowIndex].ItemArray = (this.dataGridView1.DataSource as DataTable).Rows[nowIndex - 1].ItemArray;
+                //(this.dataGridView1.DataSource as DataTable).Rows[nowIndex - 1].ItemArray = _rowData;
+                //this.dataGridView1.CurrentCell = this.dataGridView1.Rows[nowIndex - 1].Cells[0];//设定当前行
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            //下调顺序按钮
+            if (dataGridView1.CurrentRow == null)
+            {
+                MessageBox.Show("请选中要调整的行");
+            }
+            else if (dataGridView1.CurrentRow.Index >= dataGridView1.Rows.Count - 1)
+            {
+                MessageBox.Show("该行已在低端，不能下移");
+            }
+            else
+            {
+                int nowIndex = dataGridView1.CurrentRow.Index;
+                string[] rowData = new string[5];
+                for (int i = 0; i < 5; i++)
+                {
+                    rowData[i] = dataGridView1.Rows[nowIndex].Cells[i+1].Value.ToString();
+                }
+                for (int i = 0; i < 5; i++)
+                {
+                    dataGridView1.Rows[nowIndex].Cells[i+1].Value = dataGridView1.Rows[nowIndex + 1].Cells[i+1].Value;
+                }
+                for (int i = 0; i < 5; i++)
+                {
+                    dataGridView1.Rows[nowIndex + 1].Cells[i+1].Value = rowData[i];
+                }
+                this.dataGridView1.CurrentCell = this.dataGridView1.Rows[nowIndex + 1].Cells[0];//设定当前行
+            }
+        }
+        //public static bool SaveDataTableToExcel(System.Data.DataTable excelTable, string filePath)
+        //{
+        //    Microsoft.Office.Interop.Excel.Application app =
+        //        new Microsoft.Office.Interop.Excel.ApplicationClass();
+        //    try
+        //    {
+        //        app.Visible = false;
+        //        Workbook wBook = app.Workbooks.Add(true);
+        //        Worksheet wSheet = wBook.Worksheets[1] as Worksheet;
+        //        if (excelTable.Rows.Count > 0)
+        //        {
+        //            int row = 0;
+        //            row = excelTable.Rows.Count;
+        //            int col = excelTable.Columns.Count;
+        //            for (int i = 0; i < row; i++)
+        //            {
+        //                for (int j = 0; j < col; j++)
+        //                {
+        //                    string str = excelTable.Rows[i][j].ToString();
+        //                    wSheet.Cells[i + 2, j + 1] = str;
+        //                }
+        //            }
+        //        }
+
+        //        int size = excelTable.Columns.Count;
+        //        for (int i = 0; i < size; i++)
+        //        {
+        //            wSheet.Cells[1, 1 + i] = excelTable.Columns[i].ColumnName;
+        //        }
+        //        //设置禁止弹出保存和覆盖的询问提示框   
+        //        app.DisplayAlerts = false;
+        //        app.AlertBeforeOverwriting = false;
+        //        //保存工作簿   
+        //        wBook.Save();
+        //        //保存excel文件   
+        //        app.Save(filePath);
+        //        app.SaveWorkspace(filePath);
+        //        app.Quit();
+        //        app = null;
+        //        return true;
+        //    }
+        //    catch (Exception err)
+        //    {
+        //        MessageBox.Show("导出Excel出错！错误原因：" + err.Message, "提示信息",
+        //            MessageBoxButtons.OK, MessageBoxIcon.Information);
+        //        return false;
+        //    }
+        //    finally
+        //    {
+        //    }
+        //} 
     }
 }

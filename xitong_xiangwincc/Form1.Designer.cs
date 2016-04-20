@@ -29,78 +29,21 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("变量1");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("变量2");
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("变量3");
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("变量4");
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("变量5");
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("输入", new System.Windows.Forms.TreeNode[] {
-            treeNode1,
-            treeNode2,
-            treeNode3,
-            treeNode4,
-            treeNode5});
-            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("变量1");
-            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("输出", new System.Windows.Forms.TreeNode[] {
-            treeNode7});
-            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("函数1", new System.Windows.Forms.TreeNode[] {
-            treeNode6,
-            treeNode8});
-            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("节点19");
-            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("节点20");
-            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("节点21");
-            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("变量1", new System.Windows.Forms.TreeNode[] {
-            treeNode10,
-            treeNode11,
-            treeNode12});
-            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("节点22");
-            System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("变量2", new System.Windows.Forms.TreeNode[] {
-            treeNode14});
-            System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("函数2", new System.Windows.Forms.TreeNode[] {
-            treeNode13,
-            treeNode15});
-            System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("节点23");
-            System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("节点24");
-            System.Windows.Forms.TreeNode treeNode19 = new System.Windows.Forms.TreeNode("变量1", new System.Windows.Forms.TreeNode[] {
-            treeNode17,
-            treeNode18});
-            System.Windows.Forms.TreeNode treeNode20 = new System.Windows.Forms.TreeNode("节点25");
-            System.Windows.Forms.TreeNode treeNode21 = new System.Windows.Forms.TreeNode("变量2", new System.Windows.Forms.TreeNode[] {
-            treeNode20});
-            System.Windows.Forms.TreeNode treeNode22 = new System.Windows.Forms.TreeNode("函数3", new System.Windows.Forms.TreeNode[] {
-            treeNode19,
-            treeNode21});
-            System.Windows.Forms.TreeNode treeNode23 = new System.Windows.Forms.TreeNode("节点26");
-            System.Windows.Forms.TreeNode treeNode24 = new System.Windows.Forms.TreeNode("节点27");
-            System.Windows.Forms.TreeNode treeNode25 = new System.Windows.Forms.TreeNode("节点28");
-            System.Windows.Forms.TreeNode treeNode26 = new System.Windows.Forms.TreeNode("节点29");
-            System.Windows.Forms.TreeNode treeNode27 = new System.Windows.Forms.TreeNode("节点30");
-            System.Windows.Forms.TreeNode treeNode28 = new System.Windows.Forms.TreeNode("节点31");
-            System.Windows.Forms.TreeNode treeNode29 = new System.Windows.Forms.TreeNode("变量1", new System.Windows.Forms.TreeNode[] {
-            treeNode23,
-            treeNode24,
-            treeNode25,
-            treeNode26,
-            treeNode27,
-            treeNode28});
-            System.Windows.Forms.TreeNode treeNode30 = new System.Windows.Forms.TreeNode("节点32");
-            System.Windows.Forms.TreeNode treeNode31 = new System.Windows.Forms.TreeNode("变量2", new System.Windows.Forms.TreeNode[] {
-            treeNode30});
-            System.Windows.Forms.TreeNode treeNode32 = new System.Windows.Forms.TreeNode("函数4", new System.Windows.Forms.TreeNode[] {
-            treeNode29,
-            treeNode31});
-            System.Windows.Forms.TreeNode treeNode33 = new System.Windows.Forms.TreeNode("用户", new System.Windows.Forms.TreeNode[] {
-            treeNode9,
-            treeNode16,
-            treeNode22,
-            treeNode32});
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("系统");
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.系统ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.新建工程ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.打开ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.导入ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.保存ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.另存为ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.excel文件ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.txt文件ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.数据库ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.导入ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.运行设置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.开始运行ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.配置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -137,11 +80,12 @@
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.调整参数顺序ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -159,6 +103,7 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.系统ToolStripMenuItem,
+            this.导入ToolStripMenuItem,
             this.配置ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -171,6 +116,7 @@
             this.系统ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.新建工程ToolStripMenuItem,
             this.打开ToolStripMenuItem,
+            this.导入ToolStripMenuItem1,
             this.保存ToolStripMenuItem,
             this.另存为ToolStripMenuItem});
             this.系统ToolStripMenuItem.Name = "系统ToolStripMenuItem";
@@ -191,6 +137,13 @@
             this.打开ToolStripMenuItem.Text = "打开";
             this.打开ToolStripMenuItem.Click += new System.EventHandler(this.打开ToolStripMenuItem_Click);
             // 
+            // 导入ToolStripMenuItem1
+            // 
+            this.导入ToolStripMenuItem1.Name = "导入ToolStripMenuItem1";
+            this.导入ToolStripMenuItem1.Size = new System.Drawing.Size(124, 22);
+            this.导入ToolStripMenuItem1.Text = "添加函数";
+            this.导入ToolStripMenuItem1.Click += new System.EventHandler(this.导入ToolStripMenuItem1_Click);
+            // 
             // 保存ToolStripMenuItem
             // 
             this.保存ToolStripMenuItem.Name = "保存ToolStripMenuItem";
@@ -199,9 +152,54 @@
             // 
             // 另存为ToolStripMenuItem
             // 
+            this.另存为ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.excel文件ToolStripMenuItem,
+            this.txt文件ToolStripMenuItem,
+            this.数据库ToolStripMenuItem});
             this.另存为ToolStripMenuItem.Name = "另存为ToolStripMenuItem";
             this.另存为ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.另存为ToolStripMenuItem.Text = "另存为";
+            // 
+            // excel文件ToolStripMenuItem
+            // 
+            this.excel文件ToolStripMenuItem.Name = "excel文件ToolStripMenuItem";
+            this.excel文件ToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
+            this.excel文件ToolStripMenuItem.Text = "Excel文件";
+            this.excel文件ToolStripMenuItem.Click += new System.EventHandler(this.excel文件ToolStripMenuItem_Click);
+            // 
+            // txt文件ToolStripMenuItem
+            // 
+            this.txt文件ToolStripMenuItem.Name = "txt文件ToolStripMenuItem";
+            this.txt文件ToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
+            this.txt文件ToolStripMenuItem.Text = "txt文件";
+            // 
+            // 数据库ToolStripMenuItem
+            // 
+            this.数据库ToolStripMenuItem.Name = "数据库ToolStripMenuItem";
+            this.数据库ToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
+            this.数据库ToolStripMenuItem.Text = "数据库";
+            // 
+            // 导入ToolStripMenuItem
+            // 
+            this.导入ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.运行设置ToolStripMenuItem,
+            this.开始运行ToolStripMenuItem});
+            this.导入ToolStripMenuItem.Name = "导入ToolStripMenuItem";
+            this.导入ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
+            this.导入ToolStripMenuItem.Text = "运行";
+            // 
+            // 运行设置ToolStripMenuItem
+            // 
+            this.运行设置ToolStripMenuItem.Name = "运行设置ToolStripMenuItem";
+            this.运行设置ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.运行设置ToolStripMenuItem.Text = "运行设置";
+            this.运行设置ToolStripMenuItem.Click += new System.EventHandler(this.运行设置ToolStripMenuItem_Click);
+            // 
+            // 开始运行ToolStripMenuItem
+            // 
+            this.开始运行ToolStripMenuItem.Name = "开始运行ToolStripMenuItem";
+            this.开始运行ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.开始运行ToolStripMenuItem.Text = "开始运行";
             // 
             // 配置ToolStripMenuItem
             // 
@@ -217,75 +215,11 @@
             this.treeView1.ContextMenuStrip = this.contextMenuStrip1;
             this.treeView1.Location = new System.Drawing.Point(3, 3);
             this.treeView1.Name = "treeView1";
-            treeNode1.Name = "节点13";
-            treeNode1.Text = "变量1";
-            treeNode2.Name = "节点14";
-            treeNode2.Text = "变量2";
-            treeNode3.Name = "节点15";
-            treeNode3.Text = "变量3";
-            treeNode4.Name = "节点16";
-            treeNode4.Text = "变量4";
-            treeNode5.Name = "节点17";
-            treeNode5.Text = "变量5";
-            treeNode6.Name = "节点5";
-            treeNode6.Text = "输入";
-            treeNode7.Name = "节点18";
-            treeNode7.Text = "变量1";
-            treeNode8.Name = "节点6";
-            treeNode8.Text = "输出";
-            treeNode9.Name = "节点1";
-            treeNode9.Text = "函数1";
-            treeNode10.Name = "节点19";
-            treeNode10.Text = "节点19";
-            treeNode11.Name = "节点20";
-            treeNode11.Text = "节点20";
-            treeNode12.Name = "节点21";
-            treeNode12.Text = "节点21";
-            treeNode13.Name = "节点7";
-            treeNode13.Text = "变量1";
-            treeNode14.Name = "节点22";
-            treeNode14.Text = "节点22";
-            treeNode15.Name = "节点8";
-            treeNode15.Text = "变量2";
-            treeNode16.Name = "节点2";
-            treeNode16.Text = "函数2";
-            treeNode17.Name = "节点23";
-            treeNode17.Text = "节点23";
-            treeNode18.Name = "节点24";
-            treeNode18.Text = "节点24";
-            treeNode19.Name = "节点9";
-            treeNode19.Text = "变量1";
-            treeNode20.Name = "节点25";
-            treeNode20.Text = "节点25";
-            treeNode21.Name = "节点10";
-            treeNode21.Text = "变量2";
-            treeNode22.Name = "节点3";
-            treeNode22.Text = "函数3";
-            treeNode23.Name = "节点26";
-            treeNode23.Text = "节点26";
-            treeNode24.Name = "节点27";
-            treeNode24.Text = "节点27";
-            treeNode25.Name = "节点28";
-            treeNode25.Text = "节点28";
-            treeNode26.Name = "节点29";
-            treeNode26.Text = "节点29";
-            treeNode27.Name = "节点30";
-            treeNode27.Text = "节点30";
-            treeNode28.Name = "节点31";
-            treeNode28.Text = "节点31";
-            treeNode29.Name = "节点11";
-            treeNode29.Text = "变量1";
-            treeNode30.Name = "节点32";
-            treeNode30.Text = "节点32";
-            treeNode31.Name = "节点12";
-            treeNode31.Text = "变量2";
-            treeNode32.Name = "节点4";
-            treeNode32.Text = "函数4";
-            treeNode33.Name = "节点0";
-            treeNode33.Text = "用户";
+            treeNode1.Name = "节点0";
+            treeNode1.Text = "系统";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode33});
-            this.treeView1.Size = new System.Drawing.Size(208, 512);
+            treeNode1});
+            this.treeView1.Size = new System.Drawing.Size(208, 488);
             this.treeView1.TabIndex = 0;
             // 
             // contextMenuStrip1
@@ -309,6 +243,7 @@
             this.删除ToolStripMenuItem.Name = "删除ToolStripMenuItem";
             this.删除ToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
             this.删除ToolStripMenuItem.Text = "增加";
+            this.删除ToolStripMenuItem.Click += new System.EventHandler(this.删除ToolStripMenuItem_Click);
             // 
             // 删除ToolStripMenuItem1
             // 
@@ -333,6 +268,7 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(623, 165);
             this.tabControl1.TabIndex = 1;
+            this.tabControl1.Tag = resources.GetString("tabControl1.Tag");
             // 
             // tabPage1
             // 
@@ -364,9 +300,9 @@
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.label1);
-            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Location = new System.Drawing.Point(0, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(615, 133);
+            this.panel3.Size = new System.Drawing.Size(615, 130);
             this.panel3.TabIndex = 2;
             // 
             // comboBox2
@@ -383,6 +319,7 @@
             // 
             // button2
             // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button2.Location = new System.Drawing.Point(503, 97);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
@@ -393,6 +330,7 @@
             // 
             // button1
             // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.Location = new System.Drawing.Point(399, 97);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
@@ -519,7 +457,7 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(623, 309);
+            this.dataGridView1.Size = new System.Drawing.Size(623, 322);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -605,20 +543,27 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.button7);
-            this.splitContainer1.Panel2.Controls.Add(this.button6);
-            this.splitContainer1.Panel2.Controls.Add(this.button5);
-            this.splitContainer1.Panel2.Controls.Add(this.button3);
-            this.splitContainer1.Panel2.Controls.Add(this.button4);
             this.splitContainer1.Panel2.Controls.Add(this.dataGridView1);
             this.splitContainer1.Panel2.Controls.Add(this.tabControl1);
-            this.splitContainer1.Size = new System.Drawing.Size(852, 520);
+            this.splitContainer1.Size = new System.Drawing.Size(852, 496);
             this.splitContainer1.SplitterDistance = 216;
             this.splitContainer1.TabIndex = 3;
             // 
+            // button7
+            // 
+            this.button7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button7.Location = new System.Drawing.Point(601, 530);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(75, 23);
+            this.button7.TabIndex = 6;
+            this.button7.Text = "排序";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(547, 486);
+            this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button6.Location = new System.Drawing.Point(789, 530);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(75, 23);
             this.button6.TabIndex = 5;
@@ -628,7 +573,8 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(434, 486);
+            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button5.Location = new System.Drawing.Point(695, 530);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(75, 23);
             this.button5.TabIndex = 4;
@@ -638,45 +584,57 @@
             // 
             // button3
             // 
+            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button3.Location = new System.Drawing.Point(7, 485);
+            this.button3.Location = new System.Drawing.Point(236, 529);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(25, 25);
             this.button3.TabIndex = 2;
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Visible = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
+            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
             this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button4.Location = new System.Drawing.Point(38, 485);
+            this.button4.Location = new System.Drawing.Point(267, 529);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(25, 25);
             this.button4.TabIndex = 3;
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Visible = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // button7
+            // button8
             // 
-            this.button7.Location = new System.Drawing.Point(321, 486);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 23);
-            this.button7.TabIndex = 6;
-            this.button7.Text = "排序";
-            this.button7.UseVisualStyleBackColor = true;
+            this.button8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button8.Location = new System.Drawing.Point(478, 530);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(75, 23);
+            this.button8.TabIndex = 7;
+            this.button8.Text = "保存";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(876, 560);
+            this.Controls.Add(this.button8);
+            this.Controls.Add(this.button7);
+            this.Controls.Add(this.button6);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.splitContainer1);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "xx系统";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.contextMenuStrip1.ResumeLayout(false);
@@ -744,6 +702,14 @@
         private System.Windows.Forms.ToolStripMenuItem 另存为ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 调整参数顺序ToolStripMenuItem;
         private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.ToolStripMenuItem 导入ToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem 导入ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 运行设置ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem excel文件ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem txt文件ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 数据库ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 开始运行ToolStripMenuItem;
+        private System.Windows.Forms.Button button8;
     }
 }
 

@@ -12,11 +12,12 @@ namespace xitong_xiangwincc
 {
     public partial class Form2 : Form
     {
-        public Form2()
+        public Form2(iii fun)
         {
             InitializeComponent();
+            myfun = fun;
         }
-
+        iii myfun;
         private void button1_Click(object sender, EventArgs e)
         {
             Class1.fileName = textBox1.Text;
@@ -55,5 +56,11 @@ namespace xitong_xiangwincc
         {
             this.Close();
         }
+
+        private void Form2_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            
+        }
+        public  delegate void iii();
     }
 }

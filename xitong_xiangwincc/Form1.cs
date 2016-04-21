@@ -9,16 +9,28 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using System.IO;
+using System.Threading;
 
 
 namespace xitong_xiangwincc
 {
     public partial class Form1 : Form
     {
-        public void function()
+        public static Thread t1;
+        public void fun1()
         {
-            treeView1.Nodes[0].Text = "1";
+            if (Class1.fileName != null)
+            {
+                treeView1.Nodes[0].Text = Class1.fileName;
+            }
         }
+        //public void fun2()
+        //{
+        //    if (Class1.projectName != null)
+        //    {
+        //        treeView1.Nodes[1].Text = Class1.projectName;
+        //    }
+        //}
 
         public Form1()
         {
@@ -163,7 +175,7 @@ namespace xitong_xiangwincc
 
         private void 新建工程ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form2 f2 = new Form2(function);
+            Form2 f2 = new Form2(fun1);
             f2.Show();//这里应该得用子线程吧？
         }
 
@@ -224,6 +236,33 @@ namespace xitong_xiangwincc
         {
             button3.Visible = false;
             button4.Visible = false;
+
+            //将参数存入input和output
+            int inp = 0;
+            int outp = 0;
+            int totalRow = dataGridView1.RowCount - 1;
+            for (int i = 0; i < totalRow; i++)
+            {
+                if (dataGridView1.Rows[i].Cells[4].Value == "输入")
+                {
+                    inp++;
+                }
+                else
+                {
+                    outp++;
+                }
+            }
+            Class1.input = new string[inp];
+            Class1.output = new string[outp];
+            inp = 0;
+            outp = 0;
+            for (int i = 0; i < totalRow; i++)
+            {
+                if (dataGridView1.Rows[i].Cells[4].Value == "输入")
+                {
+                    Class1.input[inp]=dataGridView1.Rows[i].Cells[]
+                }
+            }
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -302,7 +341,12 @@ namespace xitong_xiangwincc
             f3.Show();
 
         }
-
+        
+        public void Method1()
+        {
+            Form f4= new Form4();
+            f4.Show();
+        }
         private void 删除ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //如果是第一级
@@ -312,22 +356,35 @@ namespace xitong_xiangwincc
             //同步到右侧
             if(treeView1.SelectedNode.Level==0)
             {
-                string nownode = "函数1";
-                tabPage1.Text = nownode + "配置";
-                treeView1.SelectedNode.Nodes.Add(nownode);
-                foreach(TreeNode td in treeView1.SelectedNode.Nodes)
+                //t1 = new Thread(Method1);
+                //t1.Start();
+                Form f4 = new Form4();
+                f4.ShowDialog();
+
+                if (Class1.biaozhi == 1)
                 {
-                    if (td.Text == nownode)
+                    string nownode = "";
+                    if (Class1.projectName != null)
                     {
-                        td.Nodes.Add("输入");
-                        td.Nodes.Add("输出");
+                        nownode = Class1.projectName;
+                    }
+                    else
+                    {
+                        nownode = "函数1";
+                    }
+                    tabPage1.Text = nownode + "配置";
+                    treeView1.SelectedNode.Nodes.Add(nownode);
+                    foreach (TreeNode td in treeView1.SelectedNode.Nodes)
+                    {
+                        if (td.Text == nownode)
+                        {
+                            td.Nodes.Add("输入");
+                            td.Nodes.Add("输出");
+                        }
                     }
                 }
                 
-                //treeView1.SelectedNode.Nodes.Add("输入");
-                //treeView1.SelectedNode.Nodes.Add("输出");
-                //对每个函数建立一个新的Excel表的新sheet
-
+                //Class1.projectName = "";
             }
         }
 
@@ -380,7 +437,7 @@ namespace xitong_xiangwincc
             {
                 MessageBox.Show("请选中要调整的行");
             }
-            else if (dataGridView1.CurrentRow.Index >= dataGridView1.Rows.Count - 1)
+            else if (dataGridView1.CurrentRow.Index >= dataGridView1.Rows.Count - 2)
             {
                 MessageBox.Show("该行已在低端，不能下移");
             }
@@ -402,6 +459,12 @@ namespace xitong_xiangwincc
                 }
                 this.dataGridView1.CurrentCell = this.dataGridView1.Rows[nowIndex + 1].Cells[0];//设定当前行
             }
+        }
+
+        private void 运行参数ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form3 f3 = new Form3();
+            f3.Show();
         }
         //public static bool SaveDataTableToExcel(System.Data.DataTable excelTable, string filePath)
         //{

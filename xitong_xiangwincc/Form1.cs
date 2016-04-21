@@ -256,12 +256,23 @@ namespace xitong_xiangwincc
             Class1.output = new string[outp];
             inp = 0;
             outp = 0;
+            //以下将数值装入input和output中
             for (int i = 0; i < totalRow; i++)
             {
                 if (dataGridView1.Rows[i].Cells[4].Value == "输入")
                 {
-                    Class1.input[inp]=dataGridView1.Rows[i].Cells[]
+                    //Class1.input[inp]=dataGridView1.Rows[i].Cells[]
                 }
+            }
+
+
+
+            //为了模拟连接系统，假装现成配置的输入输出
+            Random r=new Random();
+            for (int i = 0; i < 1000; i++)
+            {
+                Class1.x[i] = r.Next(1, 10);
+                Class1.y[i] = r.Next(1, 5);
             }
         }
 
@@ -465,6 +476,17 @@ namespace xitong_xiangwincc
         {
             Form3 f3 = new Form3();
             f3.Show();
+        }
+
+        private void 开始运行ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //连接matlab生成的函数模型
+
+            for (int i = 0; i < 1000; i++)
+            {
+                //调用1000次
+
+            }
         }
         //public static bool SaveDataTableToExcel(System.Data.DataTable excelTable, string filePath)
         //{

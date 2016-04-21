@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("系统");
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("系统");
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.系统ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -45,6 +45,9 @@
             this.运行设置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.开始运行ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.配置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.初值设置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.初值设置ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.运行参数ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.增加ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -86,9 +89,6 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
-            this.初值设置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.初值设置ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.运行参数ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -129,28 +129,28 @@
             // 新建工程ToolStripMenuItem
             // 
             this.新建工程ToolStripMenuItem.Name = "新建工程ToolStripMenuItem";
-            this.新建工程ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.新建工程ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.新建工程ToolStripMenuItem.Text = "新建工程";
             this.新建工程ToolStripMenuItem.Click += new System.EventHandler(this.新建工程ToolStripMenuItem_Click);
             // 
             // 打开ToolStripMenuItem
             // 
             this.打开ToolStripMenuItem.Name = "打开ToolStripMenuItem";
-            this.打开ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.打开ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.打开ToolStripMenuItem.Text = "打开";
             this.打开ToolStripMenuItem.Click += new System.EventHandler(this.打开ToolStripMenuItem_Click);
             // 
             // 导入ToolStripMenuItem1
             // 
             this.导入ToolStripMenuItem1.Name = "导入ToolStripMenuItem1";
-            this.导入ToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.导入ToolStripMenuItem1.Size = new System.Drawing.Size(124, 22);
             this.导入ToolStripMenuItem1.Text = "添加函数";
             this.导入ToolStripMenuItem1.Click += new System.EventHandler(this.导入ToolStripMenuItem1_Click);
             // 
             // 保存ToolStripMenuItem
             // 
             this.保存ToolStripMenuItem.Name = "保存ToolStripMenuItem";
-            this.保存ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.保存ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.保存ToolStripMenuItem.Text = "保存";
             // 
             // 另存为ToolStripMenuItem
@@ -160,7 +160,7 @@
             this.txt文件ToolStripMenuItem,
             this.数据库ToolStripMenuItem});
             this.另存为ToolStripMenuItem.Name = "另存为ToolStripMenuItem";
-            this.另存为ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.另存为ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.另存为ToolStripMenuItem.Text = "另存为";
             // 
             // excel文件ToolStripMenuItem
@@ -203,6 +203,7 @@
             this.开始运行ToolStripMenuItem.Name = "开始运行ToolStripMenuItem";
             this.开始运行ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.开始运行ToolStripMenuItem.Text = "开始运行";
+            this.开始运行ToolStripMenuItem.Click += new System.EventHandler(this.开始运行ToolStripMenuItem_Click);
             // 
             // 配置ToolStripMenuItem
             // 
@@ -214,6 +215,25 @@
             this.配置ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
             this.配置ToolStripMenuItem.Text = "配置";
             // 
+            // 初值设置ToolStripMenuItem
+            // 
+            this.初值设置ToolStripMenuItem.Name = "初值设置ToolStripMenuItem";
+            this.初值设置ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.初值设置ToolStripMenuItem.Text = "参数配置";
+            // 
+            // 初值设置ToolStripMenuItem1
+            // 
+            this.初值设置ToolStripMenuItem1.Name = "初值设置ToolStripMenuItem1";
+            this.初值设置ToolStripMenuItem1.Size = new System.Drawing.Size(124, 22);
+            this.初值设置ToolStripMenuItem1.Text = "初值设置";
+            // 
+            // 运行参数ToolStripMenuItem
+            // 
+            this.运行参数ToolStripMenuItem.Name = "运行参数ToolStripMenuItem";
+            this.运行参数ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.运行参数ToolStripMenuItem.Text = "运行参数";
+            this.运行参数ToolStripMenuItem.Click += new System.EventHandler(this.运行参数ToolStripMenuItem_Click);
+            // 
             // treeView1
             // 
             this.treeView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -222,10 +242,10 @@
             this.treeView1.ContextMenuStrip = this.contextMenuStrip1;
             this.treeView1.Location = new System.Drawing.Point(3, 3);
             this.treeView1.Name = "treeView1";
-            treeNode2.Name = "节点0";
-            treeNode2.Text = "系统";
+            treeNode1.Name = "节点0";
+            treeNode1.Text = "系统";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode2});
+            treeNode1});
             this.treeView1.Size = new System.Drawing.Size(208, 488);
             this.treeView1.TabIndex = 0;
             // 
@@ -625,25 +645,6 @@
             this.button8.Text = "保存";
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.button8_Click);
-            // 
-            // 初值设置ToolStripMenuItem
-            // 
-            this.初值设置ToolStripMenuItem.Name = "初值设置ToolStripMenuItem";
-            this.初值设置ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.初值设置ToolStripMenuItem.Text = "参数配置";
-            // 
-            // 初值设置ToolStripMenuItem1
-            // 
-            this.初值设置ToolStripMenuItem1.Name = "初值设置ToolStripMenuItem1";
-            this.初值设置ToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.初值设置ToolStripMenuItem1.Text = "初值设置";
-            // 
-            // 运行参数ToolStripMenuItem
-            // 
-            this.运行参数ToolStripMenuItem.Name = "运行参数ToolStripMenuItem";
-            this.运行参数ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.运行参数ToolStripMenuItem.Text = "运行参数";
-            this.运行参数ToolStripMenuItem.Click += new System.EventHandler(this.运行参数ToolStripMenuItem_Click);
             // 
             // Form1
             // 

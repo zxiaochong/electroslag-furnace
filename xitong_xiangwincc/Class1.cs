@@ -30,5 +30,10 @@ namespace xitong_xiangwincc
         //public static string[,] output;
         public static string[] input;
         public static string[] output;
+
+        //x，y的模拟输入值
+        public static int[] x = new int[1000];
+        public static int[] y = new int[1000];
+        public static int[] z = new int[1000];
     }
 }
